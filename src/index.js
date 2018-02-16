@@ -1,5 +1,6 @@
-import C from 'constants';
-import { name } from './store/reducers'
+import C from './constants';
+import App from './appconstants';
+import { name, status } from './store/reducers';
 
 let state = 'insane value';
 
@@ -15,3 +16,23 @@ console.log(`
 `);
 
 
+state = App.STATUS[2];
+
+console.log(`
+    Previous state
+    ------------------
+    ${state}
+`);
+
+
+state = status(state, {
+    type: C.UPDATE_STATUS,
+    payload: App.STATUS[1]
+});
+
+
+console.log(`
+    New state
+    ------------------
+    ${state}
+`);
