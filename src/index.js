@@ -11,20 +11,16 @@ console.log(`
     ${JSON.stringify(store.getState())}
 `);
 
+store.subscribe(() => console.log(store.getState()));
 
 store.dispatch({
     type: C.UPDATE_NAME,
     payload: 'Kamal kokne'
 });
 
-//state = status(state, {
-//    type: C.UPDATE_STATUS,
-//    payload: App.STATUS[2]
-//});
-
-
 console.log(`
     New state
     ------------------
     ${JSON.stringify(store.getState())}
 `);
+
