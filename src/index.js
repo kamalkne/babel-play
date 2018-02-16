@@ -1,38 +1,30 @@
 import C from './constants';
 import App from './appconstants';
-import { name, status } from './store/reducers';
+import reducer from './store/reducers';
+import { createStore } from 'redux';
 
-let state = 'insane value';
+const store = createStore(reducer);
 
-state = name(state, {
+console.log(`
+    Initial state
+    ------------------
+    ${JSON.stringify(store.getState())}
+`);
+
+
+store.dispatch({
     type: C.UPDATE_NAME,
     payload: 'Kamal kokne'
-})
-
-console.log(`
-    This is insane.
-    ------------------
-    ${state}
-`);
-
-
-state = App.STATUS[2];
-
-console.log(`
-    Previous state
-    ------------------
-    ${state}
-`);
-
-
-state = status(state, {
-    type: C.UPDATE_STATUS,
-    payload: App.STATUS[1]
 });
+
+//state = status(state, {
+//    type: C.UPDATE_STATUS,
+//    payload: App.STATUS[2]
+//});
 
 
 console.log(`
     New state
     ------------------
-    ${state}
+    ${JSON.stringify(store.getState())}
 `);
