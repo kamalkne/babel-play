@@ -1,6 +1,6 @@
 {
     name: '',
-    status: 'Single',
+    status: '1',
     likes: 100,
     friends: [
         { name: '', staus: '', likes: 120 }
