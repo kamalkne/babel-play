@@ -1,7 +1,7 @@
 import C from 'constants';
 import { name } from './store/reducers'
 
-const state = 'insane value';
+let state = 'insane value';
 
 state = name(state, {
     type: C.UPDATE_NAME,
